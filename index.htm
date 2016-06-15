@@ -10,12 +10,34 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <div class="container">
-      <button type="button" id="roll" class="btn btn-lg">Roll!</button>
-      <button type="button" id="hold" class="btn btn-lg">Hold!</button>
+    <span id="dice-icons"></span>
+    <div class="row container">
+      <div class="col-md-6 well">
+        <h2 id="one-score"></h2>
+        <br>
+        <h2 id="two-score"></h2>
+
+      </div>
+      <div class="col-md-6">
+        <button type="button" id="roll" class="btn btn-lg">Roll!</button>
+        <button type="button" id="hold" class="btn btn-lg">Hold!</button>
+        <span id="current-die"></span>
+      </div>
     </div>
-    <div class="container">
-      <p>Player 1 Score<span id="score-player1"></span></p>
-      <p>Player 2 Score<span id="score-player2"></span></p>
+    <div class="row container">
+      <div class="col-md-6">
+        <h2>Score Player 1!</h2>
+        <ul id="score-player1">
+
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h2>Score Player 2!</h2>
+        <ul id="score-player2">
+
+        </ul>
+      </div>
+    </div>
+
   </body>
 </html>

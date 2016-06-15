@@ -1,0 +1,15 @@
+span {
+  font-size: 3em;
+}
+ li {
+   font-size: 3em;
+ }
+.btn {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 1em;
+  margin: 2em;
+}
+#current-die {
+    font-size: 7em;
+}
