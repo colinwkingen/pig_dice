@@ -86,9 +86,12 @@ $(document).ready(function() {
     } else {
       playerTwo.computerTurn();
       $("#score-player2").html("<li> Score This Turn: " + playerTwo.currentScore + "</li><li> Score This Roll: " + playerTwo.currentRoll + "</li><li> Grand Total Score: " + playerTwo.totalScore + "</li>");
+      playerUpdate = playerSwitch(playerTwo.currentScore,playerTwo.totalScore);
+      currentPlayer = 1;
     }
     var diceface = diechecker();
     $("#current-die").html(diceface);
+
   });
   $("#hold").click(function() {
     if (currentPlayer === 1) {
@@ -96,11 +99,13 @@ $(document).ready(function() {
       playerOne.totalScore = switchReturn1[1];
       $("#one-score").text("Player One Score : " + playerOne.totalScore);
       playerOne.counterReset();
+      playerTwo.computerTurn()
     } else {
       var switchReturn2 = playerSwitch(playerTwo.currentScore,playerTwo.totalScore);
       playerTwo.totalScore = switchReturn2[1];
       $("#two-score").text("Player Two Score : " + playerTwo.totalScore);
       playerTwo.counterReset()
+      playerTwo.computerTurn()
     };
   });
 });

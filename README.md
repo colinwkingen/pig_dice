@@ -1,22 +1,26 @@
 # _Pig-Dice_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _{Pig dice game played vs AI}, {6/16/16}_
 
-#### By _**{List of contributors}**_
+#### By _**{James R. Howard, Colin W. Kingen}**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This application will allow you to play Pig-Dice with an AI_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Internet_
+* _Clone GitHub repository_
+* _Open in Browser_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+## Specs
+
+* _Program will allow user to click the roll button and generates a random number between 1 and 6._
+* _Program adds number to Roll, Running total, and Grand total._
+* _Program has button that keeps player Running total and adds to Grand total, then switches to AI's turn._
+* _Program has the ability to reset the running score when the player or AI rolls a 1 and pass the turn._
+* _Program counts the score up to 100 then alerts the winner._
 
 ## Known Bugs
 
@@ -24,14 +28,21 @@ _{Are there issues that have not yet been resolved that you want to let users kn
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_{Contact us by email at jrh682@gmail.com & colinwkingen@gmail}_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_{HTML, CSS, BootStrap, jQuery, Git version control, atom}_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*{The MIT License (MIT)
+Copyright (c) <2016> <James R. Howard, Colin W. Kingen>
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}*
+
+Copyright (c) 2016 **_{James R. Howard & Colin W. Kingen}_**
