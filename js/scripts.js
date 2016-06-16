@@ -1,62 +1,62 @@
-var dice = ["&#9856", "&#9857", "&#9858", "&#9859", "&#9860", "&#9861"];
-var currentPlayer = 1;
-var playerOne = new Current();
-var playerTwo = new Current();
-
-function Current() {
-  this.currentScore = 0;
-  this.currentRoll = 0;
-  this.totalScore = 0;
-};
-Current.prototype.counterReset = function() {
-  this.currentScore = 0;
-}
-Current.prototype.turn = function() {
-  var roll =  Math.floor((Math.random() * 6) + 1 );
-  if (roll + this.totalScore >= 100) {
-    alert("Player " + currentPlayer + " wins!!");
-    this.totalScore = 0;
-    this.currentScore = 0;
-    this.currentRoll = 0;
-  }
-  this.currentRoll = roll;
-  if (this.currentRoll === 1) {
-     this.currentScore = 0;
-     playerUpdate = playerSwitch(this.currentScore, this.totalScore)
-     currentPlayer = playerUpdate[0];
-  } else {
-    this.currentScore += this.currentRoll;
-    return this.currentRoll;
-  }
-};
-Current.prototype.computerTurn = function() {
-  var roll =  Math.floor((Math.random() * 6) + 1 );
-
-  if (roll + this.totalScore >= 100) {
-    alert("Player " + currentPlayer + " wins!!");
-    playerOne.totalScore = 0;
-    playerTwo.totalScore = 0;
-    playerOne.currentScore = 0;
-    playerTwo.currentRoll = 0;
-  }
-  this.currentRoll = roll;
-  if (this.currentRoll === 1) {
-     this.currentScore = 0;
-     playerUpdate = playerSwitch(this.currentScore, this.totalScore)
-     currentPlayer = playerUpdate[0];
-
-    //  Super Janky AI First Draft
-  } else if (this.currentScore < 20 ) {
-    this.currentRoll = diceRolls();
-    this.currentScore += this.currentRoll;
-    this.currentRoll = diceRolls();
-    this.currentScore += this.currentRoll;
-  } else if (this.currentScore < 12 ) {
-    this.currentRoll = diceRolls();
-    this.currentScore += this.currentRoll;
-  } else {
-     return this.currentRole;
-  }
+// var dice = ["&#9856", "&#9857", "&#9858", "&#9859", "&#9860", "&#9861"];
+// var currentPlayer = 1;
+// var playerOne = new Current();
+// var playerTwo = new Current();
+//
+// function Current() {
+//   this.currentScore = 0;
+//   this.currentRoll = 0;
+//   this.totalScore = 0;
+// };
+// Current.prototype.counterReset = function() {
+//   this.currentScore = 0;
+// }
+// Current.prototype.turn = function() {
+//   var roll =  Math.floor((Math.random() * 6) + 1 );
+//   if (roll + this.totalScore >= 100) {
+//     alert("Player " + currentPlayer + " wins!!");
+//     this.totalScore = 0;
+//     this.currentScore = 0;
+//     this.currentRoll = 0;
+//   }
+//   this.currentRoll = roll;
+//   if (this.currentRoll === 1) {
+//      this.currentScore = 0;
+//      playerUpdate = playerSwitch(this.currentScore, this.totalScore)
+//      currentPlayer = playerUpdate[0];
+//   } else {
+//     this.currentScore += this.currentRoll;
+//     return this.currentRoll;
+//   }
+// };
+// Current.prototype.computerTurn = function() {
+  // var roll =  Math.floor((Math.random() * 6) + 1 );
+  //
+  // if (roll + this.totalScore >= 100) {
+  //   alert("Player " + currentPlayer + " wins!!");
+  //   playerOne.totalScore = 0;
+  //   playerTwo.totalScore = 0;
+  //   playerOne.currentScore = 0;
+  //   playerTwo.currentRoll = 0;
+  // }
+  // this.currentRoll = roll;
+  // if (this.currentRoll === 1) {
+  //    this.currentScore = 0;
+  //    playerUpdate = playerSwitch(this.currentScore, this.totalScore)
+  //    currentPlayer = playerUpdate[0];
+  //
+  //   //  Super Janky AI First Draft
+  // } else if (this.currentScore < 20 ) {
+  //   this.currentRoll = diceRolls();
+  //   this.currentScore += this.currentRoll;
+  //   this.currentRoll = diceRolls();
+  //   this.currentScore += this.currentRoll;
+  // } else if (this.currentScore < 12 ) {
+  //   this.currentRoll = diceRolls();
+  //   this.currentScore += this.currentRoll;
+  // }
+  //    currentPlayer = 1;
+  //    return this.currentRole;
 };
 var diceRolls = function() {
   return Math.floor((Math.random() * 6) + 1);
@@ -86,8 +86,7 @@ $(document).ready(function() {
     } else {
       playerTwo.computerTurn();
       $("#score-player2").html("<li> Score This Turn: " + playerTwo.currentScore + "</li><li> Score This Roll: " + playerTwo.currentRoll + "</li><li> Grand Total Score: " + playerTwo.totalScore + "</li>");
-      playerUpdate = playerSwitch(playerTwo.currentScore,playerTwo.totalScore);
-      currentPlayer = 1;
+
     }
     var diceface = diechecker();
     $("#current-die").html(diceface);
@@ -99,13 +98,10 @@ $(document).ready(function() {
       playerOne.totalScore = switchReturn1[1];
       $("#one-score").text("Player One Score : " + playerOne.totalScore);
       playerOne.counterReset();
-      playerTwo.computerTurn()
+      playerTwo.computerTurn();
     } else {
-      var switchReturn2 = playerSwitch(playerTwo.currentScore,playerTwo.totalScore);
-      playerTwo.totalScore = switchReturn2[1];
-      $("#two-score").text("Player Two Score : " + playerTwo.totalScore);
-      playerTwo.counterReset()
-      playerTwo.computerTurn()
+      playerTwo.computerTurn();
+      currentPlayer = 1;
     };
   });
 });
